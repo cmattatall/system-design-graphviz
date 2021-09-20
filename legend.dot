@@ -26,7 +26,7 @@ digraph {
         { rank = same; legendNode4; legendNode5; legendNode6; legendNode7;}
 
         legendNode0 -> legendNode4  [label = "dependency (deployed)", style = bold]
-        legendNode1 -> legendNode6 [label = "dependency (scheduled)", style = arrow]
+        legendNode1 -> legendNode6 [label = "dependency (scheduled)", style]
         legendNode2 -> legendNode5 [label = "dependency (future)", style = dashed]
         legendNode3 -> legendNode7 [label = "dependency (potential)", style = dotted]
     }
