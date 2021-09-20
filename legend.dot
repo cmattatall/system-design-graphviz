@@ -1,0 +1,33 @@
+digraph {
+
+
+    node [
+        fontsize = "12"
+    ];
+    subgraph clusterLegend {
+        rankdir = LR;
+
+        label = "Legend";
+        color = black;
+        edge [ style = invis ];
+
+        node [ shape = ellipse]
+        legendNode0 [label = "module (completed)", style = filled] 
+        legendNode1 [label = "module (scheduled)"]
+        legendNode2 [label = "module (future)", style = dashed ]
+        legendNode3 [label = "module (potential)", style = dotted ]
+        {rank = same; legendNode0; legendNode1; legendNode2; legendNode3; }
+
+        node [ shape = box]
+        legendNode4 [label = "interface (completed)", style = filled]
+        legendNode5 [label = "interface (scheduled)"] 
+        legendNode6 [label = "interface (future)", style = dashed]
+        legendNode7 [label = "interface (potential)", style = dotted]
+        { rank = same; legendNode4; legendNode5; legendNode6; legendNode7;}
+
+        legendNode0 -> legendNode4  [label = "dependency (deployed)", style = bold]
+        legendNode1 -> legendNode6 [label = "dependency (scheduled)", style = arrow]
+        legendNode2 -> legendNode5 [label = "dependency (future)", style = dashed]
+        legendNode3 -> legendNode7 [label = "dependency (potential)", style = dotted]
+    }
+}
